@@ -4,14 +4,13 @@ convert [dayton audio mic calibration files](http://support.daytonaudio.com/Micr
 
 # installation
 
-you'll need node.js (tested on v16) of course. then run `npm install` to install the dependencies.
-
-i haven't made a proper deployment package so it's pretty much download source, grab dependencies, and run with node.
+you'll need node.js of course; then `npm install dayton2audacity` or download the source and run as usual. i haven't
+made any fancy executable scripts or anything so just run it through node.
 
 # usage
 
 ```
-node dayton2audacity.js [ infile [ outfile ] ] [ -r <ref> ]
+node dayton2audacity.js [ infile [ outfile ] ] [ -r <dbV> ]
 
    infile    name of dayton audio calibration file (stdin if missing)
    outfile   name of audacity filter curve preset (stdout if missing)
@@ -55,3 +54,7 @@ audacity silently places a limit on the number of points in the filter curve but
 if you happen to be running this in bash on windows and piping the output to something else, and you get an error `stdout is not a tty`, run it with "node.exe" instead of just "node".
 
 this is weirdness that i can't explain, but it applies to all applications run from bash on windows ([see this](https://stackoverflow.com/a/62532536)). 
+
+# homepage
+
+https://github.com/JC3/dayton2audacity
