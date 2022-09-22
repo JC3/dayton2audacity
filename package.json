@@ -1,6 +1,6 @@
 {
   "name": "dayton2audacity",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "convert dayton audio mic calibration files to audacity filter curve presets",
   "main": "dayton2audacity.js",
   "scripts": {
@@ -12,5 +12,14 @@
   "repository": "github:JC3/dayton2audacity",
   "bugs": "https://github.com/JC3/dayton2audacity/issues",
   "homepage": "https://github.com/JC3/dayton2audacity",
-  "keywords": ["dayton","audacity","calibration","microphone","filter"]
+  "keywords": [
+    "dayton",
+    "audacity",
+    "calibration",
+    "microphone",
+    "filter"
+  ],
+  "dependencies": {
+    "minimist": "^1.2.6"
+  }
 }
