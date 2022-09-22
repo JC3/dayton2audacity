@@ -85,7 +85,7 @@ function writeAudacityFilter (filename, data) {
         ...Object.fromEntries(Object.values(data.entries)
             .sort((a,b) => a.freq - b.freq)
             // try to reduce point count; audacity has a limit (todo: determine limit and warn)
-            .filter((e,n,arr) => (n == 0) || (arr[n].gain != arr[n-1].gain))
+            .filter((e,n,arr) => (n == 0) || (n == arr.length - 1) || (arr[n].gain != arr[n-1].gain) || (arr[n].gain != arr[n+1].gain))
             .map((e,n) => [[`f${n}`,e.freq], [`v${n}`,e.gain]])
             .flat())
     };
