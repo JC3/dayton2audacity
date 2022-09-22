@@ -21,6 +21,8 @@ node dayton2audacity.js [ infile [ outfile ] ]
 
 3. in audacity: *effect → filter curve → manage → import*, then load the file
 
+![filter curve eq](screenshot.png?raw=true "filter curve eq")
+
 # notes
 
 - there is a baseline reference level at the beginning of the dayton files that is read but (currently) ignored.
