@@ -4,13 +4,14 @@ convert [dayton audio mic calibration files](http://support.daytonaudio.com/Micr
 
 # installation
 
-you'll need node.js of course; then `npm install dayton2audacity` or download the source and run as usual. i haven't
-made any fancy executable scripts or anything so just run it through node.
+you can download source and run `node dayton2audacity.js` as usual, or do `npm install -g dayton2audacity` to get a `dayton2audacity` command.
+
+uninstall for the latter option is `npm uninstall -g dayton2audacity`.
 
 # usage
 
 ```
-node dayton2audacity.js [ infile [ outfile ] ] [ -r <dbV> ]
+dayton2audacity [ infile [ outfile ] ] [ -r <dbV> ]
 
    infile    name of dayton audio calibration file (stdin if missing)
    outfile   name of audacity filter curve preset (stdout if missing)
@@ -26,7 +27,7 @@ node dayton2audacity.js [ infile [ outfile ] ] [ -r <dbV> ]
 
 2. run this program to create an audacity filter curve eq preset text file
 
-3. in audacity: *effect → filter curve → manage → import*, then load the file
+3. in audacity: *effect → filter curve → manage → import*, then load the file (newer versions of audacity label the button "presets & settings" instead of "manage").
 
 ![filter curve eq](screenshot.png?raw=true "filter curve eq")
 
@@ -51,7 +52,7 @@ audacity silently places a limit on the number of points in the filter curve but
 
 ## windows + bash + pipes
 
-if you happen to be running this in bash on windows and piping the output to something else, and you get an error `stdout is not a tty`, run it with "node.exe" instead of just "node".
+if you happen to be running this as `node dayton2audacity.js` (i.e. not installed) in bash on windows and piping the output to something else, and you get an error `stdout is not a tty`, run it with "node.exe" instead of just "node".
 
 this is weirdness that i can't explain, but it applies to all applications run from bash on windows ([see this](https://stackoverflow.com/a/62532536)). 
 
